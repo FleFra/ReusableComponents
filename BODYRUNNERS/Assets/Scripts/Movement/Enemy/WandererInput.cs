@@ -30,6 +30,7 @@ public class WandererInput : MonoBehaviour, IPlayerInput
     private void PickNewDestination()
     {
         Vector3 randomDirection = Random.insideUnitSphere * wanderRadius;
+        randomDirection.y += 2;
         randomDirection += transform.position;
 
         if (NavMesh.SamplePosition(randomDirection, out NavMeshHit hit, wanderRadius, NavMesh.AllAreas))
